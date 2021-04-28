@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/">Home</a>
+
+<h1><label style="color:brown;"> Id : </label> {{podcast.id}}</h1>
+<h1><label style="color:brown;"> name : </label> {{podcast.name}}</h1>
+<h1><label style="color:brown;"> Upload-time :</label> {{podcast.upload_time}}</h1>
+<h1><label style="color:brown;">Duration : </label> {{podcast.duration}}</h1>
+<h1><label style="color:brown;">Participants: </label> {{podcast.participants}}</h1>
+
+{% endblock content %}

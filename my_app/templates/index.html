@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{% url 'song_form' %}" class="btn btn-primary my-2 mx-4">Add a song</a>
+<a href="{% url 'podcast_form' %}" class="btn btn-success mx-4">Add a Podcast</a>
+<a href="{% url 'audiobook_form' %}" class="btn btn-warning mx-4">Add an Audiobook</a>
+
+{% endblock content %}

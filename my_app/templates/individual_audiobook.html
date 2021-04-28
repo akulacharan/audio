@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/">Home</a>
+
+<h1><label style="color:brown;"> Id :</label> {{audiobook.id}}</h1>
+<h1><label style="color:brown;">Title : </label> {{audiobook.title}}</h1>
+<h1><label style="color:brown;">Author : </label> {{audiobook.author}}</h1>
+<h1><label style="color:brown;">Narrator : </label> {{audiobook.narrator}}</h1>
+<h1><label style="color:brown;">Upload-time : </label> {{audiobook.upload_time}}</h1>
+
+
+{% endblock content %}

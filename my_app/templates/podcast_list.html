@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-borderless">
+    <h2 style="text-align:center;margin:20px;"> podcasts list</h2>
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Name</td>
+            <td>Duration</td>
+            <td>Time</td>
+            <td>
+                <a href="{% url 'podcast_form' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Add new
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for podcast in podcasts %}
+        <tr>
+            <td><a href="{% url 'individual_podcast' podcast.id %}">{{podcast.name}}</a></td>
+            <td>{{podcast.duration}}</td>
+            <td>{{podcast.upload_time}}</td>
+            <td>
+                <a href="{% url 'update_podcast' podcast.id %}" class="btn text-secondary px-0">
+                   <i class="far fa-edit fa-lg"></i>
+                </a>
+                <form action="{% url 'delete_podcast' podcast.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">
+                        <i class="far fa-trash-alt fa-lg text-danger float -right"></i>
+                    </button>
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% endblock content %}
